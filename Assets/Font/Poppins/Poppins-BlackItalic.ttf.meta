@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: d5d3d2b4af0588a4c81f6c058cf838b7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Poppins Black
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 82d1dd2fce5598142bc8535bae3ead4d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
