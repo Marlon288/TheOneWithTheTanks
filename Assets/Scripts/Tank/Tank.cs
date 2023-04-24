@@ -38,6 +38,7 @@ public class Tank : MonoBehaviour
     public AudioClip DeathSound;
     AudioSource _audioSource;
 
+    private Dictionary<MeshRenderer, Color[]> OriginalColors;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,7 @@ public class Tank : MonoBehaviour
             hearts = GameObject.Find("Hearts").GetComponent<HeartManager>().GetAllChildImages();
             StartCoroutine(InitializeHealth());     
         }
+        OriginalColors = getMaterials();
     }
 
     // Update is called once per frame
@@ -175,7 +177,7 @@ public class Tank : MonoBehaviour
         }
     }
 
-     private IEnumerator FlashRed(){
+    private Dictionary<MeshRenderer, Color[]> getMaterials(){
         MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>(true);
         Dictionary<MeshRenderer, Color[]> originalColors = new Dictionary<MeshRenderer, Color[]>();
 
@@ -187,7 +189,11 @@ public class Tank : MonoBehaviour
             }
             originalColors.Add(renderer, colors);
         }
+        return originalColors;
+    } 
 
+    private IEnumerator FlashRed(){
+        MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>(true);
         float elapsedTime = 0f;
 
         while (elapsedTime < flashDuration){
@@ -197,7 +203,7 @@ public class Tank : MonoBehaviour
 
             foreach (MeshRenderer renderer in renderers){
                 for (int i = 0; i < renderer.materials.Length; i++){
-                    renderer.materials[i].color = Color.Lerp(Color.red, originalColors[renderer][i], lerpFactor);
+                    renderer.materials[i].color = Color.Lerp(Color.red, OriginalColors[renderer][i], lerpFactor);
                 }
             }
 
@@ -206,7 +212,7 @@ public class Tank : MonoBehaviour
 
         foreach (MeshRenderer renderer in renderers){
             for (int i = 0; i < renderer.materials.Length; i++){
-                renderer.materials[i].color = originalColors[renderer][i];
+                renderer.materials[i].color = OriginalColors[renderer][i];
             }
         }
     }

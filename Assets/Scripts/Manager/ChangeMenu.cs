@@ -53,6 +53,7 @@ public class ChangeMenu : MonoBehaviour
         gameOver.GetComponent<GameOverScreen>().Setup(_levelManager.currentLevel);
         changeScreens(gameOver);
         state = "gameOver";
+        _audioManager.PlayGameOverSound();
     }
 
     public void ToMenuFromGameOver(){

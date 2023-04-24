@@ -78,8 +78,10 @@ public class LevelManager : MonoBehaviour{
             }
             if(levelIndex!=0) _audioManager.ChangeToThemeSong(highestEnemy);
             GameObject player = GameObject.Find("Player");
-            player.transform.position = level.playerSpawn.spawnPosition;
-            player.transform.rotation = level.playerSpawn.spawnRotation;
+            if(player != null){
+                player.transform.position = level.playerSpawn.spawnPosition;
+                player.transform.rotation = level.playerSpawn.spawnRotation;
+            }
 
             StartCoroutine(DelayedBuildNavMesh());
         }else{
