@@ -47,7 +47,8 @@ public class Projectile : MonoBehaviour
         return GetTankComponent(transform.parent);
     }
     private void handleCollision(GameObject hitObject, Vector3 collisionNormal){
-        if (hitObject.layer == 6 || hitObject.layer == 8){
+        
+        if (hitObject.layer == 6 || hitObject.layer == 8 || hitObject.tag == "Protection"){
             if(NumOfBounces<=currBounces){
                 Explode();
             }else{
@@ -56,8 +57,8 @@ public class Projectile : MonoBehaviour
                 currBounces++;
             }
         }else if(hitObject.tag == "Enemy" || hitObject.tag == "Player"){
+            Debug.Log(hitObject.name);
             Tank tank = GetTankComponent(hitObject.transform);
-            Debug.Log(rb.velocity.magnitude);
             if (tank != null) {
                 Explode();
                 tank.takeHit();

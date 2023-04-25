@@ -4569,7 +4569,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 859046007}
         m_TargetAssemblyTypeName: ChangeMenu, Assembly-CSharp
-        m_MethodName: ToMenu
+        m_MethodName: ToMenuFromPause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4948,7 +4948,7 @@ GameObject:
   - component: {fileID: 859046012}
   m_Layer: 0
   m_Name: _Manager
-  m_TagString: Untagged
+  m_TagString: Protection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4981,7 +4981,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859046006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.98, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5030,7 +5030,7 @@ MonoBehaviour:
       spawnPosition: {x: -19.4, y: -0.5000038, z: 7.8}
       spawnRotation: {x: 0, y: 0, z: 0, w: 1}
     enemySpawns:
-    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+    - prefab: {fileID: 2452871500940351070, guid: b5220ad5770f89c408b03f9150473e9d, type: 3}
       spawnPosition: {x: 16.96, y: 0.09, z: -12.61}
       spawnRotation: {x: 0, y: 0, z: 0, w: 0}
     playerSpawn:
@@ -5116,10 +5116,10 @@ MonoBehaviour:
       spawnPosition: {x: -21.74, y: 0, z: 9.97}
       spawnRotation: {x: 0, y: 0, z: 0, w: 0}
   - obstacles:
-    - prefab: {fileID: 0}
+    - prefab: {fileID: 61985864789850491, guid: 8159c2b7871c4a54caeb1edb81c444eb, type: 3}
       spawnPosition: {x: 12.01, y: 0.5, z: 7.26}
       spawnRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-    - prefab: {fileID: 0}
+    - prefab: {fileID: 61985864789850491, guid: 8159c2b7871c4a54caeb1edb81c444eb, type: 3}
       spawnPosition: {x: -14.53, y: 0.5, z: -6.59}
       spawnRotation: {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
     - prefab: {fileID: 3281518749101056324, guid: 5acdd85d1b1bfa84b8ddc006bc0be989, type: 3}
@@ -5161,46 +5161,139 @@ MonoBehaviour:
       spawnPosition: {x: -21.74, y: 0, z: 9.97}
       spawnRotation: {x: 0, y: 0, z: 0, w: 0}
   - obstacles:
-    - prefab: {fileID: 0}
-      spawnPosition: {x: 12.01, y: 0.5, z: 7.26}
-      spawnRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-    - prefab: {fileID: 0}
-      spawnPosition: {x: -14.53, y: 0.5, z: -6.59}
-      spawnRotation: {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
-    - prefab: {fileID: 3281518749101056324, guid: 5acdd85d1b1bfa84b8ddc006bc0be989, type: 3}
-      spawnPosition: {x: -19.895412, y: -0.5, z: 6.1102715}
+    - prefab: {fileID: 7715984904903695348, guid: b1c44a0c6a7dace4cb2dba078fd16622, type: 3}
+      spawnPosition: {x: -15, y: 0.5, z: -8}
       spawnRotation: {x: 0, y: 0, z: 0, w: 1}
-    - prefab: {fileID: 3281518749101056324, guid: 5acdd85d1b1bfa84b8ddc006bc0be989, type: 3}
-      spawnPosition: {x: -10.65, y: -0.4999962, z: 11.16}
-      spawnRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
-    - prefab: {fileID: 3281518749101056324, guid: 5acdd85d1b1bfa84b8ddc006bc0be989, type: 3}
-      spawnPosition: {x: 6, y: -0.4999962, z: 0}
-      spawnRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
-    - prefab: {fileID: 3281518749101056324, guid: 5acdd85d1b1bfa84b8ddc006bc0be989, type: 3}
-      spawnPosition: {x: -6, y: -0.4999962, z: 0}
-      spawnRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
-    - prefab: {fileID: 3281518749101056324, guid: 5acdd85d1b1bfa84b8ddc006bc0be989, type: 3}
-      spawnPosition: {x: 0, y: -0.4999962, z: 6}
-      spawnRotation: {x: 0, y: 0, z: 0, w: 1}
-    - prefab: {fileID: 3281518749101056324, guid: 5acdd85d1b1bfa84b8ddc006bc0be989, type: 3}
-      spawnPosition: {x: 0, y: -0.4999962, z: -6}
-      spawnRotation: {x: 0, y: 0, z: 0, w: 1}
-    - prefab: {fileID: 3281518749101056324, guid: 5acdd85d1b1bfa84b8ddc006bc0be989, type: 3}
-      spawnPosition: {x: 8.84, y: -0.4999962, z: -10.42}
-      spawnRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
-    - prefab: {fileID: 3281518749101056324, guid: 5acdd85d1b1bfa84b8ddc006bc0be989, type: 3}
-      spawnPosition: {x: 17.59, y: -0.4999962, z: -5.73}
+    - prefab: {fileID: 7205277836871766580, guid: 94f5202d2cb346740ad05e17c61c486f, type: 3}
+      spawnPosition: {x: 4, y: -0.5, z: 1.39}
       spawnRotation: {x: 0, y: 0, z: 0, w: 1}
     enemySpawns:
     - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
-      spawnPosition: {x: 0, y: 0.09, z: 0}
+      spawnPosition: {x: 15.15, y: 0.09, z: -11.44}
       spawnRotation: {x: 0, y: 0, z: 0, w: 0}
     - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
-      spawnPosition: {x: 18.53, y: 0.09, z: -11.386634}
+      spawnPosition: {x: -0.17, y: 0.09, z: -11.44}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: -15.14, y: 0.09, z: -11.44}
       spawnRotation: {x: 0, y: 0, z: 0, w: 0}
     playerSpawn:
       prefab: {fileID: 0}
-      spawnPosition: {x: -21.74, y: 0, z: 9.97}
+      spawnPosition: {x: 0.23, y: 0, z: 12.9}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  - obstacles:
+    - prefab: {fileID: 3078891555411532050, guid: 7b180c7c69b780c4cac9773ba46177c5, type: 3}
+      spawnPosition: {x: 10.59, y: 0.5, z: -6.79}
+      spawnRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+    - prefab: {fileID: 3078891555411532050, guid: 7b180c7c69b780c4cac9773ba46177c5, type: 3}
+      spawnPosition: {x: 5.01, y: 0.5, z: -5.6560693}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 1}
+    - prefab: {fileID: 5080906164652976623, guid: 5c8de30ec002f19488629d28409bfca9, type: 3}
+      spawnPosition: {x: 15.9, y: -0.5, z: 1.93}
+      spawnRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+    - prefab: {fileID: 4607754798831806893, guid: dab0899c1aeadb547bfd1bd957aa484b, type: 3}
+      spawnPosition: {x: -9.836428, y: 0.5, z: -7.2444057}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 1}
+    - prefab: {fileID: 3281518749101056324, guid: 5acdd85d1b1bfa84b8ddc006bc0be989, type: 3}
+      spawnPosition: {x: 9.2, y: -0.5, z: 11.41}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 1}
+    - prefab: {fileID: 5984567525893383210, guid: b6552a773e0d82b4f964b3d0839cc13b, type: 3}
+      spawnPosition: {x: -7.9, y: -0.5000038, z: 7.36}
+      spawnRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+    enemySpawns:
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: -20.36, y: 0.09, z: -11.44}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: 0.76, y: 0.09, z: -11.44}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: 15.32, y: 0.09, z: 10.69}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: -11.73, y: 0.09, z: 2.9}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    playerSpawn:
+      prefab: {fileID: 0}
+      spawnPosition: {x: -11.98, y: 0, z: 12.9}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  - obstacles:
+    - prefab: {fileID: 2966147510399983587, guid: c2af4f334204a0546a601dde05742908, type: 3}
+      spawnPosition: {x: 17.44, y: -0.4999962, z: 10}
+      spawnRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+    - prefab: {fileID: 2966147510399983587, guid: c2af4f334204a0546a601dde05742908, type: 3}
+      spawnPosition: {x: -19.71, y: -0.4999962, z: -10}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 1}
+    enemySpawns:
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: -11.73, y: 0.09, z: -11.07}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: 10.39, y: 0.09, z: -11.07}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: -0.93, y: 0.09, z: -3.94}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: -19.41, y: 0.09, z: 0.27}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: 17.7, y: 0.09, z: 0.27}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    playerSpawn:
+      prefab: {fileID: 0}
+      spawnPosition: {x: -21.79, y: 0, z: 12.9}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  - obstacles:
+    - prefab: {fileID: 3636852976561768621, guid: 44847c5267b684240adceff266e48f0e, type: 3}
+      spawnPosition: {x: -19.89, y: 0.5, z: -10}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 1}
+    - prefab: {fileID: 3636852976561768621, guid: 44847c5267b684240adceff266e48f0e, type: 3}
+      spawnPosition: {x: 20.6, y: 0.5, z: -10}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 1}
+    - prefab: {fileID: 3636852976561768621, guid: 44847c5267b684240adceff266e48f0e, type: 3}
+      spawnPosition: {x: 15.48, y: 0.5, z: 11.49}
+      spawnRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+    enemySpawns:
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: -21.47, y: 0.09, z: -12.61}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: 19.48, y: 0.09, z: -12.57}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: 19.48, y: 0.09, z: 12.64}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    playerSpawn:
+      prefab: {fileID: 0}
+      spawnPosition: {x: 0, y: 0, z: 0}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  - obstacles:
+    - prefab: {fileID: 3281518749101056324, guid: 5acdd85d1b1bfa84b8ddc006bc0be989, type: 3}
+      spawnPosition: {x: -0.26, y: -0.5, z: 0.26}
+      spawnRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+    - prefab: {fileID: 2215650090055307474, guid: 1ce8468985e415144bfd7f36b32c33b8, type: 3}
+      spawnPosition: {x: 8, y: -0.5, z: -8}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 1}
+    - prefab: {fileID: 2215650090055307474, guid: 1ce8468985e415144bfd7f36b32c33b8, type: 3}
+      spawnPosition: {x: -8, y: -0.5, z: 8}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 1}
+    enemySpawns:
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: -21.47, y: 0.09, z: -12.61}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: 19.48, y: 0.09, z: -12.57}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: 6.53, y: 0.09, z: -0.32}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
+      spawnPosition: {x: -6.41, y: 0.09, z: -0.52}
+      spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+    playerSpawn:
+      prefab: {fileID: 0}
+      spawnPosition: {x: -0.65, y: 0, z: 12.27}
       spawnRotation: {x: 0, y: 0, z: 0, w: 0}
   currentLevel: 0
   navMeshSurface: {fileID: 1147925184}
@@ -5318,6 +5411,14 @@ MonoBehaviour:
   mainMenuTheme: {fileID: 8300000, guid: cd548e2c82b342145842abaac2ef057b, type: 3}
   TankThemes:
   - {fileID: 8300000, guid: 145ab0518da22e94591cd25e23805547, type: 3}
+  - {fileID: 8300000, guid: 3d8788bc2271b8a4c9f50842d16b5d83, type: 3}
+  - {fileID: 8300000, guid: f550b59bd4a497a46b2e05d0317d5f8d, type: 3}
+  - {fileID: 8300000, guid: e781554a54d5f87429639693a2236b31, type: 3}
+  - {fileID: 8300000, guid: 8f1a3d0993def954faf09f5ea9339517, type: 3}
+  - {fileID: 8300000, guid: 8703bb2157005334f89985c3f68f9a3a, type: 3}
+  - {fileID: 8300000, guid: fa0cb80051e87124bb62d94b476bf8aa, type: 3}
+  - {fileID: 8300000, guid: f1562eb28eda26d4bb635219409cea0d, type: 3}
+  - {fileID: 8300000, guid: 91c355b4f7ebe154bb635a26c7c88b45, type: 3}
   buttonClickedSound: {fileID: 8300000, guid: f44b7388dcf5dd14a981e85a3aa5a9f6, type: 3}
   advanceLevelSound: {fileID: 8300000, guid: 7478151cf36724a7dada558f746c3633, type: 3}
   gameOverSound: {fileID: 8300000, guid: e9c48196cd659684699d6c46dc65ca66, type: 3}
@@ -5583,7 +5684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14905946dd74f68489691196c39fd2db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
+  lives: 500
   speed: 8
   turnSpeedHead: 0.03
   turnSpeedWheels: 0.1
@@ -5699,7 +5800,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891556359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.74, y: 0, z: 9.97}
+  m_LocalPosition: {x: -0.65, y: 0, z: 12.27}
   m_LocalScale: {x: 120.00001, y: 120.00001, z: 120.00001}
   m_ConstrainProportionsScale: 1
   m_Children:

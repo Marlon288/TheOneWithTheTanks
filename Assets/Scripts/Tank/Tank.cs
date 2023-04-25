@@ -167,7 +167,6 @@ public class Tank : MonoBehaviour
     }
 
     public void UpdateHealth(){
-        Debug.Log("HEALTHUPDATE");
         for(int i  = 0; i<hearts.Length; i++){
             if(i< lives){
                 hearts[i].color = new Color32(28,39,103,255);
