@@ -40,8 +40,8 @@ public class ChangeMenu : MonoBehaviour
 
     public void startGame(){
         setInActive();
-        //_levelManager.AdvanceLevel();
-        _levelManager.LoadAndClearLevel(10);
+        _levelManager.AdvanceLevel();
+        // _levelManager.LoadAndClearLevel(10);
     }
 
     public void ToPauseMenu(){
