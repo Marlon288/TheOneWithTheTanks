@@ -47,9 +47,8 @@ public class LevelManager : MonoBehaviour{
             LoadLevel(currentLevel);
         }
         else{
-            Debug.Log("All levels completed!");
-            currentLevel = 1;   
-            LoadLevel(currentLevel);
+            gameObject.GetComponent<ChangeMenu>().ToWinningScreen();
+
         }
     }
     public void LoadAndClearLevel(int level){
@@ -114,6 +113,9 @@ public class LevelManager : MonoBehaviour{
 
     public void checkForEnemies(){
         if(enemiesLeft == 0){
+            if(currentLevel%5 == 0){
+                GameObject.Find("Player").GetComponent<Tank>().addLife();
+            }
             _audioManager.PlayAdvanceLevelSound();
             StartCoroutine(DelayedAdvanceLevel());
         }

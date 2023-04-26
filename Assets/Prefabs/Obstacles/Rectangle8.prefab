@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 990209314404358533}
   - component: {fileID: 4521627276660738389}
   m_Layer: 6
-  m_Name: RectangleEight
+  m_Name: Rectangle8
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

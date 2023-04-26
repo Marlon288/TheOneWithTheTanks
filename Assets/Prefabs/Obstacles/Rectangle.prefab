@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3636852976561768610}
   - component: {fileID: 3636852976561768611}
   m_Layer: 6
-  m_Name: RectangleBlock
+  m_Name: Rectangle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

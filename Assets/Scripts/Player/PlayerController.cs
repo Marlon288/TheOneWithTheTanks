@@ -5,16 +5,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {   
-    public float speed;
     private Vector2 move, mouseLook, joystickLook;
     private Vector3 rotationTarget;
     public bool isPc;
     private Tank player;
     public bool gamePaused = false;
-
-
-    public float turnSpeedHead = .025f;
-    public float turnSpeedWheels = .05f;
 
     public void OnMove(InputAction.CallbackContext context){
         move = context.ReadValue<Vector2>();

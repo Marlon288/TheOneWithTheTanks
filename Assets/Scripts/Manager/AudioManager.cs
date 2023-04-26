@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip buttonClickedSound;
     public AudioClip advanceLevelSound;
     public AudioClip gameOverSound;
+    public AudioClip winTheGameSound;
 
     // Start is called before the first frame update
     void Start()
@@ -49,17 +50,23 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlayGameOverSound(){
-       StartCoroutine(PlayGameOverSoundDelayed()); 
+       StartCoroutine(PlaySoundDelayed(gameOverSound, 2.0f)); 
     }
 
-    private IEnumerator PlayGameOverSoundDelayed()
+    public void PlayWinningSound(){
+       StartCoroutine(PlaySoundDelayed(winTheGameSound, 5.0f));
+    }
+
+    private IEnumerator PlaySoundDelayed(AudioClip sound, float delay)
     {
         music.Stop();
         yield return new WaitForSeconds(1.0f); 
 
-        ChangeSoundEffectClip(gameOverSound);
-        yield return new WaitForSeconds(2.0f); 
+        ChangeSoundEffectClip(sound);
+        yield return new WaitForSeconds(delay); 
 
         music.Play();
     }
+
+    
 }

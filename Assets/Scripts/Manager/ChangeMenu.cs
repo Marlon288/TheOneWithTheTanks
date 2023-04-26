@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ChangeMenu : MonoBehaviour
 {
-    public GameObject menu, pauseMenu, gameOver;
+    public GameObject menu, pauseMenu, gameOver, winScreen;
     public string state = "menu";
-    public PlayerController player;
+    private PlayerController player;
     public LevelManager _levelManager;
     public Text levelText;
     public GameObject prefabTank;
@@ -15,6 +15,9 @@ public class ChangeMenu : MonoBehaviour
 
     void Awake(){
         _audioManager = gameObject.GetComponent<AudioManager>();
+        GameObject newPlayer = Instantiate(prefabTank, new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0));
+        newPlayer.name = "Player";
+        player = newPlayer.GetComponent<PlayerController>();
     }
 
     void Update(){
@@ -37,7 +40,8 @@ public class ChangeMenu : MonoBehaviour
 
     public void startGame(){
         setInActive();
-        _levelManager.AdvanceLevel();
+        //_levelManager.AdvanceLevel();
+        _levelManager.LoadAndClearLevel(10);
     }
 
     public void ToPauseMenu(){
@@ -50,16 +54,25 @@ public class ChangeMenu : MonoBehaviour
     }
 
     public void ToGameOver(){
-        gameOver.GetComponent<GameOverScreen>().Setup(_levelManager.currentLevel);
-        changeScreens(gameOver);
-        state = "gameOver";
-        _audioManager.PlayGameOverSound();
+        if(state != "winScreen"){
+            gameOver.GetComponent<GameOverScreen>().Setup(_levelManager.currentLevel);
+            changeScreens(gameOver);
+            state = "gameOver";
+            _audioManager.PlayGameOverSound();
+        }
+
     }
 
     public void ToMenuFromGameOver(){
         GameObject newPlayer = Instantiate(prefabTank, new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0));
         newPlayer.name = "Player";
+        player = newPlayer.GetComponent<PlayerController>();
         ToMenu();
+    }
+
+    public void ToMenuFromWinningScreen(){
+        Destroy(GameObject.Find("Player"));
+        ToMenuFromGameOver();
     }
 
     public void RestartFromGameOver(){
@@ -85,6 +98,7 @@ public class ChangeMenu : MonoBehaviour
         if(state == "menu") menu.SetActive(false); 
         else if(state == "pauseMenu") pauseMenu.SetActive(false);
         else if(state == "gameOver") gameOver.SetActive(false);
+        else if(state == "winScreen") winScreen.SetActive(false);
         state = "level";
     }
 
@@ -97,6 +111,13 @@ public class ChangeMenu : MonoBehaviour
         Time.timeScale = 1;
         setInActive();
         player.gamePaused = false;
+    }
+
+    public void ToWinningScreen(){
+        changeScreens(winScreen);
+        player.gamePaused = true;
+        state = "winScreen";
+        _audioManager.PlayWinningSound();
     }
 
 

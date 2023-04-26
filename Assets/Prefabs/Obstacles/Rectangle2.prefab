@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4505912785387268115}
   - component: {fileID: 1386013614489701198}
   m_Layer: 6
-  m_Name: RectangleTwo
+  m_Name: Rectangle2
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

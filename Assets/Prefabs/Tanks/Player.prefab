@@ -862,7 +862,7 @@ MonoBehaviour:
   obstacleCheckDistance: 1.5
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 320
+    m_Bits: 1344
   flashDuration: 0.2
   explosionPrefab: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   explosionDuration: 1.3

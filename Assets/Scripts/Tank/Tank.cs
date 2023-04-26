@@ -150,13 +150,14 @@ public class Tank : MonoBehaviour
     }
     public void addLife(){
         lives += 1;
+        UpdateHealth();
     }
     private bool IsObstacleInFront(Vector3 movement){
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, movement.normalized, out hit, obstacleCheckDistance, obstacleLayer)){
-            if (hit.collider.CompareTag("Obstacle") || hit.collider.CompareTag("Wall")){
-                return true;
-            }
+        
+        Vector3 pos = transform.position;
+        if (Physics.Raycast(pos, movement.normalized, out hit, obstacleCheckDistance, obstacleLayer)){
+            return true;
         }
         return false;
     }
