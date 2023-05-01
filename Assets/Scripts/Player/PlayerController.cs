@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 move, mouseLook, joystickLook;
     private Vector3 rotationTarget;
     public bool isPc;
-    private Tank player;
+    private TankShooting _TankShooting;
+    private TankMovement _TankMovement;
     public bool gamePaused = false;
 
     public void OnMove(InputAction.CallbackContext context){
@@ -24,7 +25,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = gameObject.GetComponent<Tank>();   
+        //player = gameObject.GetComponent<Tank>();   
+        _TankShooting = gameObject.GetComponent<TankShooting>();   
+        _TankMovement = gameObject.GetComponent<TankMovement>();   
     }
 
     // Update is called once per frame
@@ -38,7 +41,11 @@ public class PlayerController : MonoBehaviour
                 rotationTarget = hit.point;
             }
 
-            movePlayerWithAim();
+            if(Input.GetButton("Fire1")){
+                _TankShooting.Shoot();
+            }
+
+            MovePlayerWithAim();
         }
         //Joystick on Phone, maybe implementation done later
         // else{
@@ -51,14 +58,14 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void movePlayer(){
+    public void MovePlayer(){
         Vector3 movement = new Vector3(move.x, 0f, move.y);
-        player.move(movement);
+        _TankMovement.Move(movement);
     }
 
-    public void movePlayerWithAim(){
+    public void MovePlayerWithAim(){
         Vector3 movement = new Vector3(move.x, 0f, move.y);
-        player.move(movement, rotationTarget);
+        _TankMovement.Move(movement, rotationTarget);
     }
 
     

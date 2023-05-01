@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     public NavMeshAgent agent;
-
+    
     private Transform player;
 
     public LayerMask whatIsGround, whatIsPlayer;
@@ -16,45 +16,36 @@ public class EnemyAI : MonoBehaviour
     bool walkPointSet;
     public float walkPointRange;
 
-    public float timeBetweenAttacks;
-    bool alreadyAttacked;
+    private bool hasLineOfSight = false;
+    public bool playerSpotted = false;
 
-    public float sightRange;
-    private bool playerInSightRange;
-    private bool playerSpotted = false, hasLineOfSight = false;
-
-    private Tank self; 
+    //private Tank self; 
+    private TankMovement _TankMovement;
+    private TankShooting _TankShooting;
     // Start is called before the first frame update
     void Awake()
     {
         GameObject playerGO = GameObject.Find("Player");
         if(playerGO != null) player = playerGO.transform;
         agent = GetComponent<NavMeshAgent>();
-        self = gameObject.GetComponent<Tank>();
+        //self = gameObject.GetComponent<Tank>();
+        _TankMovement = gameObject.GetComponent<TankMovement>();
+        _TankShooting = gameObject.GetComponent<TankShooting>();
+        agent.speed = _TankMovement.speed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        // playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-
-        // if(!playerInSightRange && !playerInAttackRange) Patroling();
-        // if(playerInSightRange && !playerInAttackRange) ChasePlayer();
-        // if(playerInSightRange && playerInAttackRange) ShootPlayer();
         if(player != null){
-            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        
-            if (playerInSightRange){
-                RaycastHit hit;
-                Vector3 directionToPlayer = (player.position - transform.position).normalized;
-                if (Physics.Raycast(transform.position, directionToPlayer, out hit, sightRange)){
-                    if (hit.transform.CompareTag("Player")){
-                        hasLineOfSight = true;
-                        playerSpotted = true;
-                    }else{
-                        hasLineOfSight = false;
-                    }
+            RaycastHit hit;
+            Vector3 directionToPlayer = (player.position - transform.position).normalized;
+            if (Physics.Raycast(transform.position, directionToPlayer, out hit, 100f)){
+                if (hit.transform.CompareTag("Player")){
+                    hasLineOfSight = true;
+                    playerSpotted = true;
+                }else{
+                    hasLineOfSight = false;
                 }
             }
 
@@ -95,11 +86,7 @@ public class EnemyAI : MonoBehaviour
 
     private void ShootPlayer(){
         agent.SetDestination(transform.position);
-        self.rotateToTarget(player.position);
-        self.Shoot();
-    }
-
-    private void ResetAttack(){
-        alreadyAttacked = false;
+        _TankMovement.RotateToTarget(player.position);
+        _TankShooting.Shoot();
     }
 }

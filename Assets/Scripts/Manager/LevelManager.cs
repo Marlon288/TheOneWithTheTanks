@@ -114,7 +114,7 @@ public class LevelManager : MonoBehaviour{
     public void checkForEnemies(){
         if(enemiesLeft == 0){
             if(currentLevel%5 == 0){
-                GameObject.Find("Player").GetComponent<Tank>().addLife();
+                GameObject.Find("Player").GetComponent<TankHealth>().AddLife();
             }
             _audioManager.PlayAdvanceLevelSound();
             StartCoroutine(DelayedAdvanceLevel());

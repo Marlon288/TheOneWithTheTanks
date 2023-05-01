@@ -7,11 +7,11 @@ public class ChangeMenu : MonoBehaviour
 {
     public GameObject menu, pauseMenu, gameOver, winScreen;
     public string state = "menu";
-    private PlayerController player;
+    public PlayerController player;
     public LevelManager _levelManager;
     public Text levelText;
     public GameObject prefabTank;
-    private AudioManager _audioManager;
+    public AudioManager _audioManager;
 
     void Awake(){
         _audioManager = gameObject.GetComponent<AudioManager>();
@@ -83,7 +83,7 @@ public class ChangeMenu : MonoBehaviour
     }
 
     public void ToMenuFromPause(){
-        Tank player = GameObject.Find("Player").GetComponent<Tank>();
+        TankHealth player = GameObject.Find("Player").GetComponent<TankHealth>();
         player.lives = 3;
         ToLevel();
         ToMenu();

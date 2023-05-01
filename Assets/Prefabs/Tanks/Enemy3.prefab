@@ -262,11 +262,14 @@ GameObject:
   m_Component:
   - component: {fileID: 2972807925611547876}
   - component: {fileID: 2452871500940351042}
-  - component: {fileID: 2452871500940351043}
   - component: {fileID: 2452871500940351068}
   - component: {fileID: 2452871500940351069}
   - component: {fileID: 5027596241344582942}
   - component: {fileID: -1615043204660501305}
+  - component: {fileID: -793409454849090205}
+  - component: {fileID: -8770767089105464324}
+  - component: {fileID: -7951570093946406600}
+  - component: {fileID: -3839234143129767283}
   m_Layer: 12
   m_Name: Enemy3
   m_TagString: Enemy
@@ -312,38 +315,7 @@ MonoBehaviour:
     m_Bits: 512
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  timeBetweenAttacks: 1
-  sightRange: 60
---- !u!114 &2452871500940351043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2452871500940351070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14905946dd74f68489691196c39fd2db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: 3
-  speed: 8
-  turnSpeedHead: 0.018
-  turnSpeedWheels: 0.1
-  firePoint: {fileID: 6880437063136605710}
-  bulletPrefab: {fileID: 3496487172425025958, guid: 08dc6e1a556627f47884fe6b4de71ac2, type: 3}
-  bulletForce: 15
-  firingSpeed: 1.5
-  bounces: 3
-  isPlayer: 0
-  obstacleCheckDistance: 1
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 320
-  flashDuration: 0.2
-  explosionPrefab: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3, type: 3}
-  explosionDuration: 1.3
-  DeathSound: {fileID: 8300000, guid: 432ad13017b62524c866e4b8ea9d06e7, type: 3}
+  playerSpotted: 1
 --- !u!54 &2452871500940351068
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -369,9 +341,9 @@ NavMeshAgent:
   m_GameObject: {fileID: 2452871500940351070}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3
-  m_Acceleration: 4
+  m_Radius: 0.8
+  m_Speed: 8
+  m_Acceleration: 3
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -491,6 +463,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementThreshold: 0.01
+--- !u!114 &-793409454849090205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452871500940351070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee25006549e5d94a98c186a17e5d3a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDuration: 0.2
+--- !u!114 &-8770767089105464324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452871500940351070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ef0138f1085424c8907ea44387fec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 2
+  isPlayer: 0
+  DeathSound: {fileID: 8300000, guid: 432ad13017b62524c866e4b8ea9d06e7, type: 3}
+  explosionPrefab: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3, type: 3}
+  explosionDuration: 0.6
+--- !u!114 &-7951570093946406600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452871500940351070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb67576f012a70941b7c42b83491e726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  turnSpeedWheels: 0.038
+  turnSpeedHead: 0.015
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 1344
+  obstacleCheckDistance: 1
+--- !u!114 &-3839234143129767283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452871500940351070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff954923dfee95f4d98fe78e423c3595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 6880437063136605710}
+  bulletPrefab: {fileID: 3496487172425025958, guid: 08dc6e1a556627f47884fe6b4de71ac2, type: 3}
+  bulletForce: 15
+  firingSpeed: 0.5
+  bounces: 0
 --- !u!1 &2999592376102664698
 GameObject:
   m_ObjectHideFlags: 0
