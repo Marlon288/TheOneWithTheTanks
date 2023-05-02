@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Protection
   - Hole
+  - TransparentNonInteractable
   layers:
   - Default
   - TransparentFX

@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
                 rotationTarget = hit.point;
             }
 
-            if(Input.GetButton("Fire1")){
+            if(Input.GetButton("Fire1") || Input.GetKeyDown("space") ){
                 _TankShooting.Shoot();
             }
 

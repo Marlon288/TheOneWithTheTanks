@@ -36,7 +36,7 @@ public class LevelManager : MonoBehaviour{
     }
 
     void Start(){
-        LoadLevel(0);
+
     }
 
     public void AdvanceLevel(){
@@ -108,6 +108,9 @@ public class LevelManager : MonoBehaviour{
         GameObject[] projectiles = GameObject.FindGameObjectsWithTag("Projectile");
         foreach (GameObject projectile in projectiles){
             Destroy(projectile);
+        }
+        if(currentLevel == 0){
+            Destroy(GameObject.Find("Controls(Clone)"));
         }
     }
 
