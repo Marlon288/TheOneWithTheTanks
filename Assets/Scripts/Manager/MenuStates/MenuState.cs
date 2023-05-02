@@ -3,11 +3,11 @@ using UnityEngine.UI;
 
 public abstract class MenuState
 {
-    protected ChangeMenu menu;
+    protected MenuManager menu;
 
-    public MenuState(ChangeMenu changeMenu)
+    public MenuState(MenuManager _MenuManager)
     {
-        menu = changeMenu;
+        menu = _MenuManager;
     }
 
     public abstract void Enter();

@@ -27,7 +27,7 @@ public class Tank : MonoBehaviour
     public LayerMask obstacleLayer;
 
     private Image[] hearts;
-    private ChangeMenu menu;
+    private MenuManager menu;
     private LevelManager _levelManager;
 
     public float flashDuration = 10f;
@@ -43,7 +43,7 @@ public class Tank : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        menu = GameObject.Find("_Manager").GetComponent<ChangeMenu>();
+        menu = GameObject.Find("_Manager").GetComponent<MenuManager>();
         _levelManager = GameObject.Find("_Manager").GetComponent<LevelManager>();
         _audioSource = gameObject.GetComponent<AudioSource>();
         lastSafePosition = transform.position;

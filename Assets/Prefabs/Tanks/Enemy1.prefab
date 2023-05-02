@@ -394,7 +394,7 @@ AudioSource:
   m_GameObject: {fileID: 2452871500940351070}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4851818102676733130, guid: 4dd422ffda29cd24ea6b5ebbd79eae65, type: 2}
   m_audioClip: {fileID: 8300000, guid: 61c59d188244d4240b957f26554cafd5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.25
@@ -560,6 +560,7 @@ MonoBehaviour:
   bulletForce: 12
   firingSpeed: 1
   bounces: 0
+  targetSeeking: 0
 --- !u!1 &2999592376102664698
 GameObject:
   m_ObjectHideFlags: 0

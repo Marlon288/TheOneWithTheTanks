@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour{
             LoadLevel(currentLevel);
         }
         else{
-            gameObject.GetComponent<ChangeMenu>().ToWinningScreen();
+            gameObject.GetComponent<MenuManager>().ToWinningScreen();
 
         }
     }

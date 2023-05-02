@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 15
-  maxProjectileDistance: 50
   NumOfBounces: 2
   explosionPrefab: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00, type: 3}
   explosionDuration: 0.5
@@ -252,7 +251,7 @@ AudioSource:
   m_GameObject: {fileID: 3496487172425025958}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4851818102676733130, guid: 4dd422ffda29cd24ea6b5ebbd79eae65, type: 2}
   m_audioClip: {fileID: 8300000, guid: 33b113ee65322ab4d94eb6b218cec7e1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1

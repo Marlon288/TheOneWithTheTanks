@@ -8,7 +8,7 @@ public class TankHealth : MonoBehaviour
     public bool isPlayer = false;
 
     private Image[] hearts;
-    private ChangeMenu menu;
+    private MenuManager menu;
     private LevelManager _levelManager;
     private TankVisuals _TankVisuals;
 
@@ -20,7 +20,7 @@ public class TankHealth : MonoBehaviour
 
     private void Start()
     {
-        menu = GameObject.Find("_Manager").GetComponent<ChangeMenu>();
+        menu = GameObject.Find("_Manager").GetComponent<MenuManager>();
         _levelManager = GameObject.Find("_Manager").GetComponent<LevelManager>();
         _audioSource = gameObject.GetComponent<AudioSource>();
         _TankVisuals = gameObject.GetComponent<TankVisuals>();
