@@ -313,8 +313,12 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 512
+  whatIsNotHoles:
+    serializedVersion: 2
+    m_Bits: 7104
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
+  walkPointSet: 0
+  walkPointRange: 15
   playerSpotted: 1
 --- !u!54 &2452871500940351068
 Rigidbody:
@@ -341,7 +345,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2452871500940351070}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.8
+  m_Radius: 2.5
   m_Speed: 8
   m_Acceleration: 3
   avoidancePriority: 50
@@ -505,9 +509,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb67576f012a70941b7c42b83491e726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 4.5
   turnSpeedWheels: 0.038
-  turnSpeedHead: 0.015
+  turnSpeedHead: 0.025
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1344

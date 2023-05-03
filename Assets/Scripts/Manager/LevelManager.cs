@@ -90,16 +90,28 @@ public class LevelManager : MonoBehaviour{
 
     private IEnumerator DelayedBuildNavMesh() {
         // Wait for the specified amount of time
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
 
         // Call the method you want to delay
         navMeshSurface.BuildNavMesh();
+
+        yield return new WaitForSeconds(0.2f);
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies){
+            EnemyAI _EnemyAI = enemy.GetComponent<EnemyAI>();
+            if(_EnemyAI != null) _EnemyAI.walkPointSet = false;
+        }
     }
 
     private void ClearLevel(){
         GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
         foreach (GameObject obstacle in obstacles){
             Destroy(obstacle);
+        }
+        GameObject[] holes = GameObject.FindGameObjectsWithTag("Hole");
+        foreach (GameObject hole in holes){
+            Destroy(hole);
         }
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies){

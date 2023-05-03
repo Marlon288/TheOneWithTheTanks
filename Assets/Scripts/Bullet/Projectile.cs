@@ -46,8 +46,9 @@ public class Projectile : MonoBehaviour
         return GetTankComponent(transform.parent);
     }
     private void handleCollision(GameObject hitObject, Vector3 collisionNormal){
+        
         if (hitObject.layer == 6 || hitObject.layer == 8 || hitObject.tag == "Protection"){
-            
+            Debug.Log("COLLISION ");
             if(NumOfBounces<=currBounces){
                 Explode();
             }else{
@@ -75,7 +76,7 @@ public class Projectile : MonoBehaviour
         handleCollision(collider.gameObject, Vector3.zero);
     }
     
-    private void Explode(){
+    public void Explode(){
         GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(explosion, explosionDuration);
         Destroy(gameObject);

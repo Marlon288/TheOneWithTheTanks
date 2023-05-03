@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 6090177799615105408}
   - component: {fileID: 1194429270562506051}
   - component: {fileID: 6144120544008223054}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Holes4 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,8 +213,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.354191, y: 0.87244004, z: 2.0676565}
-  m_Center: {x: 1.1209545, y: 0.06377998, z: -0.012784481}
+  m_Size: {x: 4.354191, y: 6.3717337, z: 2.0676565}
+  m_Center: {x: 1.1209545, y: 2.8134265, z: -0.012784481}
 --- !u!65 &6144120544008223054
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -226,8 +226,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.107748, y: 0.87244004, z: 4.3474607}
-  m_Center: {x: -0.0022668839, y: 0.06377998, z: -1.1526866}
+  m_Size: {x: 2.107748, y: 5.982909, z: 4.3474607}
+  m_Center: {x: -0.0022668839, y: 2.6190143, z: -1.1526866}
 --- !u!1 &1695406584693787511
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,9 +486,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7226607851276677885}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HolesCircleWithHoles
-  m_TagString: Untagged
+  m_TagString: Hole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -938,7 +938,7 @@ GameObject:
   - component: {fileID: 4468862338748432126}
   - component: {fileID: 8796455828481307197}
   - component: {fileID: 102861069597722792}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Holes4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -974,8 +974,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.3816667, y: 0.87244004, z: 2.0676565}
-  m_Center: {x: 5.652029, y: 0.06377998, z: -0.012784481}
+  m_Size: {x: 4.381667, y: 3.2179856, z: 2.0676565}
+  m_Center: {x: 5.652029, y: 1.2365527, z: -0.012784481}
 --- !u!65 &102861069597722792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -987,8 +987,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0199447, y: 0.87244004, z: 4.432062}
-  m_Center: {x: 6.8328905, y: 0.06377998, z: 1.1694186}
+  m_Size: {x: 2.0199447, y: 3.2203643, z: 4.432062}
+  m_Center: {x: 6.8328905, y: 1.2377421, z: 1.1694186}
 --- !u!1 &7649905858967462147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +1000,7 @@ GameObject:
   - component: {fileID: 3958187478021611412}
   - component: {fileID: 8284813436178846551}
   - component: {fileID: 4550791249335192357}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Holes4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,8 +1036,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.402728, y: 0.87244004, z: 2.0676565}
-  m_Center: {x: 5.641498, y: 0.06377998, z: -0.012784481}
+  m_Size: {x: 4.402728, y: 2.8925889, z: 2.0676565}
+  m_Center: {x: 5.641498, y: 1.0738546, z: -0.012784481}
 --- !u!65 &4550791249335192357
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1049,8 +1049,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.074788, y: 0.87244004, z: 4.3890686}
-  m_Center: {x: 6.805468, y: 0.06377998, z: 1.1479216}
+  m_Size: {x: 2.074788, y: 2.6876745, z: 4.3890686}
+  m_Center: {x: 6.805468, y: 0.9713974, z: 1.1479216}
 --- !u!1 &8497639066537287011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,7 +1228,7 @@ GameObject:
   - component: {fileID: 2456353282591087438}
   - component: {fileID: 7350269509875701645}
   - component: {fileID: 4392355436027818966}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Holes4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1264,8 +1264,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.353846, y: 0.87244004, z: 2.0676565}
-  m_Center: {x: 1.1207817, y: 0.06377998, z: -0.012784481}
+  m_Size: {x: 4.353846, y: 3.5154943, z: 2.0676565}
+  m_Center: {x: 1.1207817, y: 1.3853068, z: -0.012784481}
 --- !u!65 &4392355436027818966
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1277,5 +1277,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0318513, y: 0.87244004, z: 4.3517656}
-  m_Center: {x: -0.04021597, y: 0.06377998, z: -1.1548393}
+  m_Size: {x: 2.0318513, y: 3.7892487, z: 4.3517656}
+  m_Center: {x: -0.04021597, y: 1.5221843, z: -1.1548393}

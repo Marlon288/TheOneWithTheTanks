@@ -9,19 +9,25 @@ public class EnemyAI : MonoBehaviour
     
     private Transform player;
 
-    public LayerMask whatIsGround, whatIsPlayer;
+    public LayerMask whatIsGround, whatIsPlayer, whatIsNotHoles;
 
     //Patroling
     public Vector3 walkPoint;
-    bool walkPointSet;
+    public bool walkPointSet;
     public float walkPointRange;
 
     private bool hasLineOfSight = false;
     public bool playerSpotted = false;
 
+    private float timeSinceLastMove = 0f;
+    private Vector3 lastPosition;
+    private GameObject firePoint;
+
     //private Tank self; 
     private TankMovement _TankMovement;
     private TankShooting _TankShooting;
+
+    private bool cooldownActive;
     // Start is called before the first frame update
     void Awake()
     {
@@ -32,15 +38,20 @@ public class EnemyAI : MonoBehaviour
         _TankMovement = gameObject.GetComponent<TankMovement>();
         _TankShooting = gameObject.GetComponent<TankShooting>();
         agent.speed = _TankMovement.speed;
+        firePoint = this.gameObject.transform.GetChild(1).gameObject;
+        cooldownActive = true;
+        StartCoroutine(CooldownCoroutine());
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if(player != null){
+            
             RaycastHit hit;
-            Vector3 directionToPlayer = (player.position - transform.position).normalized;
-            if (Physics.Raycast(transform.position, directionToPlayer, out hit, 100f)){
+            Vector3 directionToPlayer = (player.position - firePoint.transform.position).normalized;
+            if (Physics.Raycast(firePoint.transform.position, directionToPlayer, out hit, 100f, whatIsNotHoles)){
                 if (hit.transform.CompareTag("Player")){
                     hasLineOfSight = true;
                     playerSpotted = true;
@@ -49,7 +60,7 @@ public class EnemyAI : MonoBehaviour
                 }
             }
 
-            if ((!hasLineOfSight && !playerSpotted) ){
+            if ((!hasLineOfSight && !playerSpotted)){
                 Patroling();
             }else if(hasLineOfSight){
                 ShootPlayer();
@@ -57,8 +68,28 @@ public class EnemyAI : MonoBehaviour
                 ChasePlayer();
             }
         }else Patroling();
+
+        if (Vector3.Distance(transform.position, lastPosition) < 0.2f){
+            timeSinceLastMove += Time.deltaTime;
+
+            if (timeSinceLastMove >= 2f){
+                walkPointSet = false; // Reset the walk point so a new one will be searched
+                timeSinceLastMove = 0f;
+            }
+        }else
+        {
+            timeSinceLastMove = 0f;
+        }
+
+        lastPosition = transform.position;
         
         
+    }
+
+    IEnumerator CooldownCoroutine()
+    {
+        yield return new WaitForSeconds(2f);
+        cooldownActive = false;
     }
 
     private void Patroling(){
@@ -68,18 +99,44 @@ public class EnemyAI : MonoBehaviour
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         if(distanceToWalkPoint.magnitude < 1f) walkPointSet = false;
+        Debug.DrawRay(walkPoint, Vector3.up * 2f, Color.red, 2f);
     }
 
     private void SearchWalkPoint(){
-        float randomZ = Random.Range(-walkPointRange, walkPointRange);
-        float randomX = Random.Range(-walkPointRange, walkPointRange);
+        // float randomZ = Random.Range(-walkPointRange, walkPointRange);
+        // float randomX = Random.Range(-walkPointRange, walkPointRange);
 
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        // walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if(Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround)) walkPointSet =  true;
+        // if(Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround)) walkPointSet =  true;
+
+        float maxHeightDifference = 1f; // Set this value according to your needs
+
+        for (int i = 0; i < 100; i++) // Try up to 100 times to find a valid walk point
+        {
+            float randomAngle = Random.Range(0f, 360f);
+            float randomDistance = Random.Range(0f, walkPointRange);
+
+            Vector3 direction = new Vector3(Mathf.Sin(randomAngle), 0, Mathf.Cos(randomAngle));
+            Vector3 potentialWalkPoint = transform.position + direction * randomDistance;
+
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(potentialWalkPoint, out hit, walkPointRange, NavMesh.AllAreas))
+            {
+                // Check the height difference
+                float heightDifference = Mathf.Abs(hit.position.y - transform.position.y);
+                if (heightDifference <= maxHeightDifference)
+                {
+                    walkPoint = hit.position;
+                    walkPointSet = true;
+                    return;
+                }
+            }
+        }
         
     }
     
+
     private void ChasePlayer(){
         agent.SetDestination(player.position);
     }
@@ -87,6 +144,7 @@ public class EnemyAI : MonoBehaviour
     private void ShootPlayer(){
         agent.SetDestination(transform.position);
         _TankMovement.RotateToTarget(player.position);
-        _TankShooting.Shoot();
+        if(!cooldownActive) _TankShooting.Shoot();
+        
     }
 }

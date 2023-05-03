@@ -313,8 +313,12 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 512
+  whatIsNotHoles:
+    serializedVersion: 2
+    m_Bits: 7104
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
+  walkPointSet: 0
+  walkPointRange: 15
   playerSpotted: 0
 --- !u!54 &2452871500940351068
 Rigidbody:
@@ -341,9 +345,9 @@ NavMeshAgent:
   m_GameObject: {fileID: 2452871500940351070}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.8
+  m_Radius: 1.5
   m_Speed: 3
-  m_Acceleration: 4
+  m_Acceleration: 2
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -505,9 +509,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb67576f012a70941b7c42b83491e726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 2
   turnSpeedWheels: 0.018
-  turnSpeedHead: 0.01
+  turnSpeedHead: 0.018
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1344
@@ -891,7 +895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6880437063136605711}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.0003, z: 0.01451}
+  m_LocalPosition: {x: 0, y: 0.0003, z: 0.0139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

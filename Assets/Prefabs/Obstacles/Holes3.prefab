@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 239386915914823073}
   - component: {fileID: 5135693775683254626}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Holes3
-  m_TagString: Untagged
+  m_TagString: Hole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,8 +46,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.5903635, y: 0.87244004, z: 2.0676565}
-  m_Center: {x: 2.2390418, y: 0.06377998, z: -0.012784481}
+  m_Size: {x: 6.5903635, y: 4.2451487, z: 2.0676565}
+  m_Center: {x: 2.2390418, y: 1.7501336, z: -0.012784481}
 --- !u!1001 &2095780186335531872
 PrefabInstance:
   m_ObjectHideFlags: 0

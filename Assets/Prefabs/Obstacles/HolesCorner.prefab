@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7226607851276677885}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HolesCorner
-  m_TagString: Untagged
+  m_TagString: Hole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,9 +84,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5135693775683254626, guid: f97c2c77d5d888a46bc4ad66316b181a, type: 3}
+      propertyPath: m_Size.y
+      value: 3.1717129
+      objectReference: {fileID: 0}
+    - target: {fileID: 5135693775683254626, guid: f97c2c77d5d888a46bc4ad66316b181a, type: 3}
+      propertyPath: m_Center.y
+      value: 1.2134166
+      objectReference: {fileID: 0}
     - target: {fileID: 6887652490153904950, guid: f97c2c77d5d888a46bc4ad66316b181a, type: 3}
       propertyPath: m_Name
       value: Holes4 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887652490153904950, guid: f97c2c77d5d888a46bc4ad66316b181a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f97c2c77d5d888a46bc4ad66316b181a, type: 3}
@@ -146,9 +158,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5135693775683254626, guid: f97c2c77d5d888a46bc4ad66316b181a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.2589712
+      objectReference: {fileID: 0}
+    - target: {fileID: 5135693775683254626, guid: f97c2c77d5d888a46bc4ad66316b181a, type: 3}
+      propertyPath: m_Center.y
+      value: 0.75704587
+      objectReference: {fileID: 0}
     - target: {fileID: 6887652490153904950, guid: f97c2c77d5d888a46bc4ad66316b181a, type: 3}
       propertyPath: m_Name
       value: Holes4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887652490153904950, guid: f97c2c77d5d888a46bc4ad66316b181a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f97c2c77d5d888a46bc4ad66316b181a, type: 3}

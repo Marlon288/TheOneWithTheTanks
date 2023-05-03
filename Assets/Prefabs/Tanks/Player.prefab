@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ef0138f1085424c8907ea44387fec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
+  lives: 10000000
   isPlayer: 1
   DeathSound: {fileID: 8300000, guid: 432ad13017b62524c866e4b8ea9d06e7, type: 3}
   explosionPrefab: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
@@ -1013,8 +1013,8 @@ MonoBehaviour:
   firePoint: {fileID: 5778873951566420982}
   bulletPrefab: {fileID: 3496487172425025958, guid: 08dc6e1a556627f47884fe6b4de71ac2, type: 3}
   bulletForce: 15
-  firingSpeed: 0.8
-  bounces: 2
+  firingSpeed: 0.5
+  bounces: 1
   targetSeeking: 0
 --- !u!114 &290026631505844704
 MonoBehaviour:
