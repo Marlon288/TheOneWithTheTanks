@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ef0138f1085424c8907ea44387fec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 10000000
+  lives: 3
   isPlayer: 1
   DeathSound: {fileID: 8300000, guid: 432ad13017b62524c866e4b8ea9d06e7, type: 3}
   explosionPrefab: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
