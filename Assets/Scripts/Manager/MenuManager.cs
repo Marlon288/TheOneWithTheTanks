@@ -30,9 +30,9 @@ public class MenuManager : MonoBehaviour
             else{
                 SetMenuState(new PauseMenuState(this));
             }
-         }//else if(Input.GetKeyDown(KeyCode.Return)){
-        //     _levelManager.AdvanceLevel();
-        // }
+         }else if(Input.GetKeyDown(KeyCode.Return)){
+             _levelManager.AdvanceLevel();
+         }
     }
 
     public void SetMenuState(MenuState newState){
