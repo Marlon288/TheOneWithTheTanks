@@ -10,7 +10,7 @@ public class MainMenuState : MenuState
         menu.state = "menu";
         menu.menu.SetActive(true);
         Object.Destroy(GameObject.Find("Player"));
-        GameObject newPlayer = Object.Instantiate(menu.prefabTank, new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0));
+        GameObject newPlayer = Object.Instantiate(menu.prefabTank, new Vector3(-18.5f,0,9f), Quaternion.Euler(0, 0, 0));
         newPlayer.name = "Player";
 
         

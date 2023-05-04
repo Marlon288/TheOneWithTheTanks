@@ -29,7 +29,7 @@ public class TankShooting : MonoBehaviour
             
         }
     }
-
+    //The projectile can be stuck in the wall, if it is not moving then the projectile gets removed.
     private IEnumerator DelayedProjectileCheck(Projectile pjct)
     {
         yield return new WaitForSeconds(0.1f);

@@ -13,7 +13,7 @@ public class GameOverState : MenuState
         menu.gameOver.SetActive(true);
         menu.state = "gameOver";
 
-        menu.gameOver.GetComponent<GameOverScreen>().Setup( menu._levelManager.currentLevel);
+        menu.gameOver.transform.GetChild(1).GetComponent<Text>().text = "AT LEVEL " + menu._levelManager.currentLevel;
         menu._audioManager.PlayGameOverSound();
     }
 

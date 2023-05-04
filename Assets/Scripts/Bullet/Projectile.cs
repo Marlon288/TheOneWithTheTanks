@@ -32,10 +32,11 @@ public class Projectile : MonoBehaviour
         lastVelocity = rb.velocity;
     }
 
+    // Check if the projectile has stopped moving and destroy it if necessary
     public void checkForMovingProjectile(){
         if(lastVelocity.magnitude < 0.5f) Destroy(gameObject);
     }
-
+    // Recursive function to find the TankHealth component
     private TankHealth GetTankComponent(Transform transform){
         if (transform == null) return null;
 
@@ -45,6 +46,7 @@ public class Projectile : MonoBehaviour
 
         return GetTankComponent(transform.parent);
     }
+    // Handle collisions with various objects
     private void handleCollision(GameObject hitObject, Vector3 collisionNormal){
         //If Hits wall, obstacle or the protection
         if (hitObject.layer == 6 || hitObject.layer == 8 || hitObject.tag == "Protection"){
@@ -75,6 +77,7 @@ public class Projectile : MonoBehaviour
         handleCollision(collider.gameObject, Vector3.zero);
     }
     
+    // Create explosion and destroy the projectile
     public void Explode(){
         GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(explosion, explosionDuration);

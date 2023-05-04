@@ -12,6 +12,7 @@ public class TankVisuals : MonoBehaviour
         OriginalColors = GetMaterials();
     }
 
+    //Get the intial materials once in the beginning, so to reduce CPU usage
     private Dictionary<MeshRenderer, Color[]> GetMaterials(){
         MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>(true);
         Dictionary<MeshRenderer, Color[]> originalColors = new Dictionary<MeshRenderer, Color[]>();
@@ -28,6 +29,7 @@ public class TankVisuals : MonoBehaviour
         return originalColors;
     }
 
+    //Turns the material red for a shoort amount of time until it returns to the intial Render
     public IEnumerator FlashRed(){
         MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>(true);
         float elapsedTime = 0f;

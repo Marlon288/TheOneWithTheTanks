@@ -4130,7 +4130,6 @@ GameObject:
   - component: {fileID: 637923120}
   - component: {fileID: 637923123}
   - component: {fileID: 637923122}
-  - component: {fileID: 637923124}
   m_Layer: 5
   m_Name: GameOverScreen
   m_TagString: Untagged
@@ -4200,19 +4199,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637923119}
   m_CullTransparentMesh: 1
---- !u!114 &637923124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 637923119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3dfe6d74f963354a977fdf0867bdc6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelText: {fileID: 2122005461}
 --- !u!1 &666892180
 GameObject:
   m_ObjectHideFlags: 0
@@ -4322,7 +4308,6 @@ GameObject:
   - component: {fileID: 668299393}
   - component: {fileID: 668299396}
   - component: {fileID: 668299395}
-  - component: {fileID: 668299394}
   m_Layer: 5
   m_Name: WinScreen
   m_TagString: Untagged
@@ -4354,19 +4339,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &668299394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668299392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3dfe6d74f963354a977fdf0867bdc6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelText: {fileID: 387596747}
 --- !u!114 &668299395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6478,7 +6450,7 @@ MonoBehaviour:
       spawnPosition: {x: -15.6, y: -0.4999962, z: -13.3}
       spawnRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
     - prefab: {fileID: 3281518749101056324, guid: 5acdd85d1b1bfa84b8ddc006bc0be989, type: 3}
-      spawnPosition: {x: 17.155733, y: -0.5000019, z: -8.95}
+      spawnPosition: {x: 15.31, y: -0.5000019, z: -7.2}
       spawnRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
     - prefab: {fileID: 61985864789850491, guid: 8159c2b7871c4a54caeb1edb81c444eb, type: 3}
       spawnPosition: {x: -15.47, y: 0.5, z: 6}
@@ -7409,7 +7381,7 @@ MonoBehaviour:
       spawnPosition: {x: 14.72, y: 0.09, z: -1.74}
       spawnRotation: {x: 0, y: 0, z: 0, w: 0}
     - prefab: {fileID: 2452871500940351070, guid: 7da12a55cfdcbc249b961518e2b55efe, type: 3}
-      spawnPosition: {x: 16.78, y: 0.09, z: 4.18}
+      spawnPosition: {x: 16.78, y: 0.09, z: -3.8}
       spawnRotation: {x: 0, y: 0, z: 0, w: 0}
     playerSpawn:
       prefab: {fileID: 0}
@@ -7489,7 +7461,7 @@ MonoBehaviour:
       spawnPosition: {x: -15.6, y: -0.4999962, z: -13.3}
       spawnRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
     - prefab: {fileID: 3281518749101056324, guid: 5acdd85d1b1bfa84b8ddc006bc0be989, type: 3}
-      spawnPosition: {x: 17.155733, y: -0.5000019, z: -8.95}
+      spawnPosition: {x: 15.31, y: -0.5000019, z: -7.2}
       spawnRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
     - prefab: {fileID: 61985864789850491, guid: 8159c2b7871c4a54caeb1edb81c444eb, type: 3}
       spawnPosition: {x: -15.47, y: 0.5, z: 6}
