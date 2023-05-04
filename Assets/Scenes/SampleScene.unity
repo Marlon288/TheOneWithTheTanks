@@ -6019,7 +6019,7 @@ MonoBehaviour:
       spawnPosition: {x: 11.98, y: -0.49, z: -11.28}
       spawnRotation: {x: 0, y: 0, z: 0, w: 1}
     enemySpawns:
-    - prefab: {fileID: 2452871500940351070, guid: 7da12a55cfdcbc249b961518e2b55efe, type: 3}
+    - prefab: {fileID: 2452871500940351070, guid: 1b79709895206a845b3efdc3dcaa23d5, type: 3}
       spawnPosition: {x: 17.66, y: 0.09, z: -9.91}
       spawnRotation: {x: 0, y: 0, z: 0, w: 0}
     playerSpawn:

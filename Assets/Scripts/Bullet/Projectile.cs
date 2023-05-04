@@ -46,9 +46,8 @@ public class Projectile : MonoBehaviour
         return GetTankComponent(transform.parent);
     }
     private void handleCollision(GameObject hitObject, Vector3 collisionNormal){
-        
+        //If Hits wall, obstacle or the protection
         if (hitObject.layer == 6 || hitObject.layer == 8 || hitObject.tag == "Protection"){
-            Debug.Log("COLLISION ");
             if(NumOfBounces<=currBounces){
                 Explode();
             }else{

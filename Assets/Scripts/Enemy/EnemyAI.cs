@@ -40,6 +40,7 @@ public class EnemyAI : MonoBehaviour
         agent.speed = _TankMovement.speed;
         firePoint = this.gameObject.transform.GetChild(1).gameObject;
         cooldownActive = true;
+        //Wait two seconds until the enemy is able to shoot.
         StartCoroutine(CooldownCoroutine());
 
     }
@@ -68,7 +69,7 @@ public class EnemyAI : MonoBehaviour
                 ChasePlayer();
             }
         }else Patroling();
-
+        //If the AI gets stuck for 2 seconds, it will calculate a new walkPoint after 
         if (Vector3.Distance(transform.position, lastPosition) < 0.2f){
             timeSinceLastMove += Time.deltaTime;
 
@@ -99,18 +100,11 @@ public class EnemyAI : MonoBehaviour
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         if(distanceToWalkPoint.magnitude < 1f) walkPointSet = false;
-        Debug.DrawRay(walkPoint, Vector3.up * 2f, Color.red, 2f);
     }
 
     private void SearchWalkPoint(){
-        // float randomZ = Random.Range(-walkPointRange, walkPointRange);
-        // float randomX = Random.Range(-walkPointRange, walkPointRange);
-
-        // walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-
-        // if(Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround)) walkPointSet =  true;
-
-        float maxHeightDifference = 1f; // Set this value according to your needs
+        float maxHeightDifference = 1f; 
+        // If the walkpoint is set on top of an obstacle, then calculate a new one
 
         for (int i = 0; i < 100; i++) // Try up to 100 times to find a valid walk point
         {
